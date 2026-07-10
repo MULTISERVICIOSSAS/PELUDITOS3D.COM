@@ -5,29 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Peluditos 3D crea accesorios 3D para celular inspirados en mascotas. Diseños colombianos en PLA, con empaque de regalo y apoyo a la Fundación Animalista Girardot.">
     <meta name="theme-color" content="#1f7a68">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta property="og:title" content="Peluditos 3D | Accesorios para celular con causa">
     <meta property="og:description" content="Lleva a tu mascota en el celular con accesorios 3D hechos en Colombia y apoya a peluditos de la Fundación Animalista Girardot.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://santiagomateusp-hue.github.io/PELUDITOS3D.COM/hero.jpg">
-    <meta property="og:url" content="https://santiagomateusp-hue.github.io/PELUDITOS3D.COM/">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="Peluditos 3D">
+    <meta property="og:image" content="https://peluditos3d.shop/hero.jpg">
+    <meta property="og:image:alt" content="Accesorio Peluditos 3D instalado en un celular">
+    <meta property="og:url" content="https://peluditos3d.shop/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Peluditos 3D | Accesorios para celular con causa">
+    <meta name="twitter:description" content="Accesorios 3D inspirados en mascotas, hechos en Colombia y con propósito social.">
+    <meta name="twitter:image" content="https://peluditos3d.shop/hero.jpg">
     <title>Peluditos 3D | Accesorios para celular con causa</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="canonical" href="https://peluditos3d.shop/">
     <link rel="icon" href="logo.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="preload" href="hero.jpg" as="image" fetchpriority="high">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://peluditos3d.shop/#organization",
+                "name": "Peluditos 3D",
+                "url": "https://peluditos3d.shop/",
+                "logo": "https://peluditos3d.shop/logo.png",
+                "sameAs": ["https://www.instagram.com/peluditos3d/"]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://peluditos3d.shop/#website",
+                "url": "https://peluditos3d.shop/",
+                "name": "Peluditos 3D",
+                "inLanguage": "es-CO",
+                "publisher": { "@id": "https://peluditos3d.shop/#organization" }
+            }
+        ]
+    }
+    </script>
 
     <style>
         :root {
             --ink: #263238;
-            --muted: #607d8b;
+            --muted: #50656d;
             --line: #dfe7e5;
             --paper: #ffffff;
             --mist: #f5fbf8;
             --mint: #1f7a68;
             --mint-2: #34a982;
-            --sky: #2189b8;
+            --sky: #176f93;
             --sun: #f5b642;
             --coral: #e86d55;
             --footer: #20333a;
@@ -46,7 +78,7 @@
 
         body {
             margin: 0;
-            font-family: "Quicksand", Arial, sans-serif;
+            font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
             color: var(--ink);
             background: var(--paper);
             line-height: 1.6;
@@ -56,13 +88,76 @@
             overflow: hidden;
         }
 
+        .skip-link {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            z-index: 2000;
+            padding: 10px 14px;
+            color: var(--paper);
+            background: var(--ink);
+            border-radius: var(--radius);
+            transform: translateY(-150%);
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
         img {
             display: block;
             max-width: 100%;
         }
 
+        .fa-solid,
+        .fa-brands {
+            display: inline-block;
+            width: 1em;
+            font-style: normal;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .fa-whatsapp::before { content: "☎"; }
+        .fa-instagram::before { content: "◎"; }
+        .fa-bars::before { content: "☰"; }
+        .fa-xmark::before { content: "×"; }
+        .fa-plus::before { content: "+"; }
+        .fa-minus::before { content: "−"; }
+        .fa-trash::before { content: "×"; }
+        .fa-check::before { content: "✓"; }
+        .fa-star::before { content: "★"; }
+        .fa-heart::before { content: "♥"; }
+        .fa-bolt::before { content: "↯"; }
+        .fa-percent::before { content: "%"; }
+        .fa-tag::before { content: "◆"; }
+        .fa-gift::before { content: "▣"; }
+        .fa-shield-halved::before { content: "◆"; }
+        .fa-paw::before { content: "●"; }
+        .fa-flag::before { content: "⚑"; }
+        .fa-leaf::before { content: "♦"; }
+        .fa-hand-holding-heart::before { content: "♥"; }
+        .fa-store::before { content: "▤"; }
+        .fa-cat::before { content: "●"; }
+        .fa-gem::before { content: "◆"; }
+        .fa-mobile-screen-button::before { content: "▯"; }
+        .fa-hand-sparkles::before { content: "✦"; }
+        .fa-location-dot::before { content: "●"; }
+        .fa-hand-pointer::before { content: "↑"; }
+        .fa-bowl-food::before { content: "◡"; }
+        .fa-comments::before,
+        .fa-message::before { content: "●"; }
+        .fa-circle-question::before { content: "?"; }
+
         a {
             color: inherit;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid var(--sun);
+            outline-offset: 3px;
         }
 
         h1,
@@ -70,7 +165,7 @@
         h3,
         h4 {
             margin: 0;
-            font-family: "Fredoka", Arial, sans-serif;
+            font-family: "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
             line-height: 1.1;
             letter-spacing: 0;
         }
@@ -98,6 +193,8 @@
         #catalogo,
         #como-funciona,
         #mision,
+        #preguntas,
+        #contacto,
         #pedido {
             scroll-margin-top: 86px;
         }
@@ -161,7 +258,7 @@
         }
 
         .brand span {
-            font-family: "Fredoka", Arial, sans-serif;
+            font-family: "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
             font-size: 1.25rem;
         }
 
@@ -334,7 +431,7 @@
 
         .promo-number {
             display: block;
-            font-family: "Fredoka", Arial, sans-serif;
+            font-family: "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
             font-size: 2rem;
             font-weight: 800;
             line-height: 1;
@@ -475,7 +572,7 @@
         }
 
         .price s {
-            color: #8aa0a7;
+            color: #5f737a;
             font-size: 0.95rem;
             font-weight: 700;
         }
@@ -599,7 +696,8 @@
             color: var(--coral);
         }
 
-        .reviews {
+        .reviews,
+        .faq-section {
             background: var(--mist);
         }
 
@@ -619,6 +717,60 @@
             margin-top: 14px;
         }
 
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 36px;
+            align-items: start;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .faq-heading {
+            margin-left: 0;
+            text-align: left;
+        }
+
+        .faq-list details {
+            padding: 18px;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+        }
+
+        .faq-list summary {
+            cursor: pointer;
+            font-weight: 900;
+        }
+
+        .faq-list p {
+            margin-top: 10px;
+            color: var(--muted);
+        }
+
+        .contact-panel {
+            padding: 26px;
+            color: var(--paper);
+            background: var(--mint);
+            border-radius: var(--radius);
+        }
+
+        .contact-panel h2 {
+            color: var(--paper);
+            font-size: 2rem;
+        }
+
+        .contact-panel p {
+            margin: 12px 0 20px;
+        }
+
+        .contact-panel .eyebrow {
+            color: var(--paper);
+        }
+
         .order-section {
             background: var(--footer);
             color: var(--paper);
@@ -630,6 +782,10 @@
 
         .order-copy p {
             color: rgba(255, 255, 255, 0.82);
+        }
+
+        .order-copy .eyebrow {
+            color: var(--sun);
         }
 
         .order-copy .check-list i {
@@ -666,6 +822,12 @@
             outline: 0;
         }
 
+        textarea.form-control {
+            min-height: 92px;
+            padding-top: 12px;
+            resize: vertical;
+        }
+
         .form-control:focus {
             border-color: var(--mint);
             box-shadow: 0 0 0 4px rgba(31, 122, 104, 0.14);
@@ -688,7 +850,7 @@
         }
 
         .cart-empty {
-            color: #7c9197;
+            color: var(--muted);
             text-align: center;
             font-weight: 700;
         }
@@ -714,6 +876,36 @@
             border: 0;
             border-radius: var(--radius);
             cursor: pointer;
+        }
+
+        .cart-controls {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cart-qty {
+            min-width: 28px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .cart-adjust {
+            width: 32px;
+            height: 32px;
+            color: var(--ink);
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            cursor: pointer;
+        }
+
+        .form-status {
+            min-height: 24px;
+            margin-top: 10px;
+            color: #9a2e1f;
+            font-weight: 800;
+            text-align: center;
         }
 
         .cart-total {
@@ -755,7 +947,7 @@
 
         .footer-brand {
             color: var(--paper);
-            font-family: "Fredoka", Arial, sans-serif;
+            font-family: "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
             font-size: 1.4rem;
             font-weight: 800;
         }
@@ -807,6 +999,7 @@
             .products-grid,
             .story-grid,
             .mission-grid,
+            .faq-grid,
             .order-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -900,6 +1093,7 @@
             .products-grid,
             .story-grid,
             .mission-grid,
+            .faq-grid,
             .order-grid {
                 grid-template-columns: 1fr;
             }
@@ -954,13 +1148,28 @@
                 grid-template-columns: 1fr auto;
             }
 
-            .cart-item strong {
+            .cart-item > strong,
+            .cart-controls {
                 grid-column: 1 / -1;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
         <nav class="container nav" aria-label="Navegación principal">
             <a class="brand" href="#inicio" aria-label="Peluditos 3D, ir al inicio">
@@ -974,12 +1183,13 @@
                 <li><a class="nav-link" href="#catalogo">Colección</a></li>
                 <li><a class="nav-link" href="#como-funciona">Cómo funciona</a></li>
                 <li><a class="nav-link" href="#mision">Fundación</a></li>
+                <li><a class="nav-link" href="#preguntas">Preguntas</a></li>
                 <li><a class="btn btn-primary" href="#pedido"><i class="fa-brands fa-whatsapp"></i> Pedir ahora</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero" id="inicio">
             <div class="container">
                 <div class="hero-content">
@@ -1060,7 +1270,7 @@
                 <div class="products-grid">
                     <article class="product-card">
                         <div class="product-media">
-                            <img src="poodle.jpg" alt="Accesorio 3D de Poodle con empaque Peluditos" loading="lazy" decoding="async">
+                            <img src="poodle.jpg" alt="Accesorio 3D de Poodle con empaque Peluditos" width="853" height="1280" loading="lazy" decoding="async">
                         </div>
                         <div class="product-info">
                             <div>
@@ -1075,7 +1285,7 @@
 
                     <article class="product-card">
                         <div class="product-media">
-                            <img src="pinscher.jpg" alt="Accesorio 3D de Pinscher con empaque Peluditos" loading="lazy" decoding="async">
+                            <img src="pinscher.jpg" alt="Accesorio 3D de Pinscher con empaque Peluditos" width="853" height="1280" loading="lazy" decoding="async">
                         </div>
                         <div class="product-info">
                             <div>
@@ -1090,7 +1300,7 @@
 
                     <article class="product-card">
                         <div class="product-media">
-                            <img src="gato-nuevo.JPG" alt="Accesorio 3D de Gato Criollo con empaque Peluditos" loading="lazy" decoding="async">
+                            <img src="gato-nuevo.JPG" alt="Accesorio 3D de Gato Criollo con empaque Peluditos" width="853" height="1280" loading="lazy" decoding="async">
                         </div>
                         <div class="product-info">
                             <div>
@@ -1105,7 +1315,7 @@
 
                     <article class="product-card">
                         <div class="product-media">
-                            <img src="shihtzu.jpg" alt="Accesorio 3D de Shih Tzu con empaque Peluditos" loading="lazy" decoding="async">
+                            <img src="shihtzu.jpg" alt="Accesorio 3D de Shih Tzu con empaque Peluditos" width="853" height="1280" loading="lazy" decoding="async">
                         </div>
                         <div class="product-info">
                             <div>
@@ -1120,7 +1330,7 @@
 
                     <article class="product-card">
                         <div class="product-media">
-                            <img src="perro-criollo.jpg" alt="Accesorio 3D de Perro Criollo con empaque Peluditos" loading="lazy" decoding="async">
+                            <img src="perro-criollo.jpg" alt="Accesorio 3D de Perro Criollo con empaque Peluditos" width="853" height="1280" loading="lazy" decoding="async">
                         </div>
                         <div class="product-info">
                             <div>
@@ -1135,7 +1345,7 @@
 
                     <article class="product-card">
                         <div class="product-media">
-                            <img src="gato-persa.jpg" alt="Accesorio 3D de Gato Persa con empaque Peluditos" loading="lazy" decoding="async">
+                            <img src="gato-persa.jpg" alt="Accesorio 3D de Gato Persa con empaque Peluditos" width="853" height="1280" loading="lazy" decoding="async">
                         </div>
                         <div class="product-info">
                             <div>
@@ -1195,7 +1405,7 @@
                         </ul>
                     </div>
                     <div class="image-frame">
-                        <img src="regalo.jpg" alt="Caja de regalo de Peluditos 3D" loading="lazy" decoding="async">
+                        <img src="regalo.jpg" alt="Caja de regalo de Peluditos 3D" width="974" height="974" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -1205,7 +1415,7 @@
             <div class="container">
                 <div class="mission-grid">
                     <div class="image-frame">
-                        <img src="info.jpg" alt="Información de la causa social de Peluditos 3D" loading="lazy" decoding="async">
+                        <img src="info.jpg" alt="Información de la causa social de Peluditos 3D" width="1024" height="1280" loading="lazy" decoding="async">
                     </div>
                     <div class="mission-copy">
                         <span class="eyebrow"><i class="fa-solid fa-hand-holding-heart"></i> Compra con causa</span>
@@ -1231,27 +1441,62 @@
                 </div>
                 <div class="review-grid">
                     <article class="review-card">
-                        <div class="stars" aria-label="5 de 5 estrellas">
+                        <div class="stars" role="img" aria-label="5 de 5 estrellas">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p>"Es igualito a mi perro. Me encantó la calidad y la cajita."</p>
                         <strong>Camila R.</strong>
                     </article>
                     <article class="review-card">
-                        <div class="stars" aria-label="5 de 5 estrellas">
+                        <div class="stars" role="img" aria-label="5 de 5 estrellas">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p>"Lo compré para regalo y llegó súper lindo. El pedido fue fácil."</p>
                         <strong>Julián M.</strong>
                     </article>
                     <article class="review-card">
-                        <div class="stars" aria-label="5 de 5 estrellas">
+                        <div class="stars" role="img" aria-label="5 de 5 estrellas">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p>"Me gustó saber que además de comprar algo bonito estoy ayudando."</p>
                         <strong>Ana S.</strong>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <section class="section faq-section" id="preguntas" aria-labelledby="preguntas-title">
+            <div class="container faq-grid">
+                <div>
+                    <div class="section-heading faq-heading">
+                        <span class="eyebrow"><i class="fa-solid fa-circle-question"></i> Antes de pedir</span>
+                        <h2 id="preguntas-title">Preguntas frecuentes</h2>
+                    </div>
+                    <div class="faq-list">
+                        <details>
+                            <summary>¿Cómo hago mi pedido?</summary>
+                            <p>Elige los modelos, ajusta las cantidades y completa tu nombre y ciudad. Revisas el resumen y continúas la conversación por WhatsApp.</p>
+                        </details>
+                        <details>
+                            <summary>¿El pago se realiza en esta página?</summary>
+                            <p>No. Esta página no solicita ni almacena datos de tarjetas. Los datos de pago y entrega se confirman directamente por WhatsApp.</p>
+                        </details>
+                        <details>
+                            <summary>¿Qué modelos están disponibles?</summary>
+                            <p>La colección publicada incluye Poodle, Pinscher, Gato Criollo, Shih Tzu, Perro Criollo y Gato Persa. La disponibilidad final se confirma al enviar el pedido.</p>
+                        </details>
+                        <details>
+                            <summary>¿Cómo se coordina la entrega?</summary>
+                            <p>Indica tu ciudad en el formulario. Peluditos 3D confirma por WhatsApp los datos necesarios para la entrega antes de cualquier pago.</p>
+                        </details>
+                    </div>
+                </div>
+                <aside class="contact-panel" id="contacto" aria-labelledby="contacto-title">
+                    <span class="eyebrow"><i class="fa-solid fa-message"></i> Contacto directo</span>
+                    <h2 id="contacto-title">¿Tienes una pregunta especial?</h2>
+                    <p>Escríbenos por WhatsApp o revisa las novedades reales de Peluditos 3D en Instagram.</p>
+                    <a class="btn btn-primary" href="https://wa.me/573052556248" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp</a>
+                </aside>
             </div>
         </section>
 
@@ -1272,7 +1517,7 @@
                     <form class="order-panel" id="order-form">
                         <div class="form-group">
                             <label for="name">Nombre completo</label>
-                            <input class="form-control" id="name" name="name" type="text" placeholder="Ej: Laura Gómez" autocomplete="name" required>
+                            <input class="form-control" id="name" name="name" type="text" placeholder="Ej: Laura Gómez" autocomplete="name" minlength="2" maxlength="80" required>
                         </div>
 
                         <div class="order-row">
@@ -1306,11 +1551,22 @@
 
                         <div class="form-group">
                             <label for="city">Ciudad</label>
-                            <input class="form-control" id="city" name="city" type="text" placeholder="Ej: Bogotá" autocomplete="address-level2" required>
+                            <input class="form-control" id="city" name="city" type="text" placeholder="Ej: Bogotá" autocomplete="address-level2" minlength="2" maxlength="80" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Dirección <span class="form-help">(opcional)</span></label>
+                            <input class="form-control" id="address" name="address" type="text" autocomplete="street-address" maxlength="160">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Observaciones <span class="form-help">(opcional)</span></label>
+                            <textarea class="form-control" id="notes" name="notes" maxlength="300" placeholder="Detalles útiles para confirmar tu pedido"></textarea>
                         </div>
 
                         <button class="btn submit-order" type="submit"><i class="fa-brands fa-whatsapp"></i> Enviar pedido</button>
                         <p class="form-help">No pagas en la web. El pedido se confirma por WhatsApp.</p>
+                        <p class="form-status" id="form-status" aria-live="assertive"></p>
                     </form>
                 </div>
             </div>
@@ -1325,27 +1581,31 @@
                 <p>&copy; 2026 Peluditos 3D.</p>
             </div>
             <div class="social-links" aria-label="Redes y contacto">
-                <a href="https://www.instagram.com/peluditos3d/" target="_blank" rel="noopener" aria-label="Instagram de Peluditos 3D"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/573052556248" target="_blank" rel="noopener" aria-label="WhatsApp de Peluditos 3D"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/peluditos3d/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Peluditos 3D"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/573052556248" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Peluditos 3D"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
 
-    <a class="wa-float" href="https://wa.me/573052556248" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <a class="wa-float" href="https://wa.me/573052556248" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <script>
         const WHATSAPP_NUMBER = "573052556248";
         const UNIT_PRICE = 24900;
+        const STORAGE_KEY = "peluditos3d-cart-v1";
+        const PRODUCTS = new Set(["Poodle", "Pinscher", "Gato Criollo", "Shih Tzu", "Perro Criollo", "Gato Persa"]);
         const formatter = new Intl.NumberFormat("es-CO", {
             style: "currency",
             currency: "COP",
             maximumFractionDigits: 0
         });
 
-        const cart = [];
+        const cart = loadCart();
+        document.querySelectorAll("i.fa-solid, i.fa-brands").forEach((icon) => icon.setAttribute("aria-hidden", "true"));
         const navToggle = document.querySelector(".menu-toggle");
+        const navIcon = navToggle.querySelector("i");
         const navLinks = document.querySelectorAll(".nav-menu a");
         const productSelect = document.getElementById("product-select");
         const qtyInput = document.getElementById("product-qty");
@@ -1353,12 +1613,15 @@
         const cartTotal = document.getElementById("cart-total");
         const addButton = document.getElementById("add-product");
         const orderForm = document.getElementById("order-form");
+        const formStatus = document.getElementById("form-status");
+
+        renderCart();
 
         navToggle.addEventListener("click", () => {
             const isOpen = document.body.classList.toggle("nav-open");
             navToggle.setAttribute("aria-expanded", String(isOpen));
             navToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
-            navToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+            navIcon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
         });
 
         navLinks.forEach((link) => {
@@ -1366,7 +1629,7 @@
                 document.body.classList.remove("nav-open");
                 navToggle.setAttribute("aria-expanded", "false");
                 navToggle.setAttribute("aria-label", "Abrir menú");
-                navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                navIcon.className = "fa-solid fa-bars";
             });
         });
 
@@ -1374,13 +1637,36 @@
             button.addEventListener("click", () => {
                 productSelect.value = button.dataset.product;
                 qtyInput.value = "1";
-                document.getElementById("pedido").scrollIntoView({ behavior: "smooth", block: "start" });
+                const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                document.getElementById("pedido").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
                 setTimeout(() => qtyInput.focus(), 450);
             });
         });
 
         addButton.addEventListener("click", addToOrder);
         orderForm.addEventListener("submit", sendToWhatsapp);
+        cartDisplay.addEventListener("click", handleCartAction);
+
+        function loadCart() {
+            try {
+                const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+                if (!Array.isArray(stored)) return [];
+
+                return stored
+                    .filter((item) => item && PRODUCTS.has(item.name) && Number.isInteger(item.qty))
+                    .map((item) => ({ name: item.name, qty: Math.min(Math.max(item.qty, 1), 20) }));
+            } catch {
+                return [];
+            }
+        }
+
+        function saveCart() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+        }
+
+        function setStatus(message) {
+            formStatus.textContent = message;
+        }
 
         function getQuantity() {
             const parsed = Number.parseInt(qtyInput.value, 10);
@@ -1401,13 +1687,14 @@
 
             const existing = cart.find((item) => item.name === product);
             if (existing) {
-                existing.qty += qty;
+                existing.qty = Math.min(existing.qty + qty, 20);
             } else {
                 cart.push({ name: product, qty });
             }
 
             productSelect.value = "";
             qtyInput.value = "1";
+            setStatus("");
             renderCart();
         }
 
@@ -1416,31 +1703,82 @@
             renderCart();
         }
 
+        function changeQuantity(index, amount) {
+            const item = cart[index];
+            if (!item) return;
+
+            item.qty = Math.min(Math.max(item.qty + amount, 1), 20);
+            renderCart();
+        }
+
+        function handleCartAction(event) {
+            const button = event.target.closest("button[data-action]");
+            if (!button) return;
+
+            const index = Number.parseInt(button.dataset.index, 10);
+            if (!Number.isInteger(index) || !cart[index]) return;
+
+            if (button.dataset.action === "remove") removeItem(index);
+            if (button.dataset.action === "decrease") changeQuantity(index, -1);
+            if (button.dataset.action === "increase") changeQuantity(index, 1);
+        }
+
         function renderCart() {
+            cartDisplay.replaceChildren();
+
             if (cart.length === 0) {
-                cartDisplay.innerHTML = '<p class="cart-empty">Tu carrito está vacío</p>';
+                const empty = document.createElement("p");
+                empty.className = "cart-empty";
+                empty.textContent = "Tu carrito está vacío";
+                cartDisplay.append(empty);
                 cartTotal.textContent = formatter.format(0);
+                saveCart();
                 return;
             }
 
             const total = cart.reduce((sum, item) => sum + item.qty * UNIT_PRICE, 0);
-            cartDisplay.innerHTML = cart.map((item, index) => {
-                const itemTotal = formatter.format(item.qty * UNIT_PRICE);
-                return `
-                    <div class="cart-item">
-                        <span><strong>${item.qty}x</strong> ${item.name}</span>
-                        <strong>${itemTotal}</strong>
-                        <button class="cart-remove" type="button" aria-label="Quitar ${item.name}" data-index="${index}">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </div>
-                `;
-            }).join("");
-            cartTotal.textContent = formatter.format(total);
+            cart.forEach((item, index) => {
+                const row = document.createElement("div");
+                row.className = "cart-item";
 
-            cartDisplay.querySelectorAll(".cart-remove").forEach((button) => {
-                button.addEventListener("click", () => removeItem(Number.parseInt(button.dataset.index, 10)));
+                const name = document.createElement("span");
+                name.textContent = item.name;
+
+                const subtotal = document.createElement("strong");
+                subtotal.textContent = formatter.format(item.qty * UNIT_PRICE);
+
+                const controls = document.createElement("div");
+                controls.className = "cart-controls";
+
+                const decrease = createCartButton("decrease", index, `Restar una unidad de ${item.name}`, "fa-minus");
+                const quantity = document.createElement("span");
+                quantity.className = "cart-qty";
+                quantity.textContent = String(item.qty);
+                const increase = createCartButton("increase", index, `Agregar una unidad de ${item.name}`, "fa-plus");
+                const remove = createCartButton("remove", index, `Quitar ${item.name} del carrito`, "fa-trash", "cart-remove");
+
+                controls.append(decrease, quantity, increase, remove);
+                row.append(name, subtotal, controls);
+                cartDisplay.append(row);
             });
+
+            cartTotal.textContent = formatter.format(total);
+            saveCart();
+        }
+
+        function createCartButton(action, index, label, iconName, extraClass = "cart-adjust") {
+            const button = document.createElement("button");
+            button.className = extraClass;
+            button.type = "button";
+            button.dataset.action = action;
+            button.dataset.index = String(index);
+            button.setAttribute("aria-label", label);
+
+            const icon = document.createElement("i");
+            icon.className = `fa-solid ${iconName}`;
+            icon.setAttribute("aria-hidden", "true");
+            button.append(icon);
+            return button;
         }
 
         function sendToWhatsapp(event) {
@@ -1448,36 +1786,51 @@
 
             const name = document.getElementById("name").value.trim();
             const city = document.getElementById("city").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const notes = document.getElementById("notes").value.trim();
 
-            if (!name || !city) {
-                alert("Escribe tu nombre y ciudad para enviar el pedido.");
+            if (!orderForm.checkValidity()) {
+                setStatus("Revisa los campos obligatorios antes de continuar.");
+                orderForm.reportValidity();
                 return;
             }
 
             if (cart.length === 0) {
-                alert("Agrega al menos un Peludito al carrito.");
+                setStatus("Agrega al menos un Peludito al carrito.");
                 productSelect.focus();
                 return;
             }
 
             const total = cart.reduce((sum, item) => sum + item.qty * UNIT_PRICE, 0);
-            const items = cart.map((item) => `- ${item.qty}x ${item.name}`).join("\n");
+            const items = cart.map((item) => `- ${item.qty}x ${item.name} | ${formatter.format(UNIT_PRICE)} c/u | ${formatter.format(item.qty * UNIT_PRICE)}`).join("\n");
             const message = [
                 "Hola Peluditos 3D!",
                 "",
                 "Quiero confirmar mi pedido:",
                 `Nombre: ${name}`,
                 `Ciudad: ${city}`,
+                address ? `Dirección: ${address}` : "",
                 "",
                 "Productos:",
                 items,
                 "",
                 `Total: ${formatter.format(total)}`,
+                notes ? `Observaciones: ${notes}` : "",
                 "",
                 "¿Me regalan los datos de pago y entrega?"
-            ].join("\n");
+            ].filter((line, index, lines) => line !== "" || lines[index - 1] !== "").join("\n");
 
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+            const summary = `Revisa tu pedido antes de abrir WhatsApp:\n\n${items}\n\nTotal: ${formatter.format(total)}\nCiudad: ${city}`;
+            if (!window.confirm(summary)) {
+                setStatus("Puedes seguir ajustando el pedido antes de enviarlo.");
+                return;
+            }
+
+            setStatus("");
+            const whatsappWindow = window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+            if (!whatsappWindow) {
+                setStatus("El navegador bloqueó la nueva pestaña. Permite ventanas emergentes e inténtalo de nuevo.");
+            }
         }
     </script>
 </body>
