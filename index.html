@@ -190,16 +190,6 @@
             padding: 72px 0;
         }
 
-        #inicio,
-        #catalogo,
-        #como-funciona,
-        #mision,
-        #preguntas,
-        #contacto,
-        #pedido {
-            scroll-margin-top: 86px;
-        }
-
         .section-heading {
             max-width: 720px;
             margin: 0 auto 36px;
@@ -609,6 +599,112 @@
             background: #fff7e4;
         }
 
+        .premium-custom {
+            color: #3f2b1f;
+            background: #fffaf3;
+            border-top: 1px solid #eadbc7;
+            border-bottom: 1px solid #eadbc7;
+        }
+
+        .premium-intro {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 32px;
+            align-items: end;
+            margin-bottom: 30px;
+        }
+
+        .premium-heading {
+            max-width: 760px;
+        }
+
+        .premium-custom .eyebrow {
+            color: #8a551f;
+        }
+
+        .premium-heading h2 {
+            font-size: 2.55rem;
+        }
+
+        .premium-heading p {
+            margin-top: 14px;
+            color: #665548;
+            font-size: 1.08rem;
+        }
+
+        .premium-cta {
+            min-width: 250px;
+            color: #ffffff;
+            background: #15803d;
+            box-shadow: 0 10px 24px rgba(21, 128, 61, 0.24);
+        }
+
+        .premium-cta:hover {
+            background: #116a33;
+        }
+
+        .premium-banner {
+            overflow: hidden;
+            margin: 0;
+            background: #f5e5d1;
+            border: 1px solid #d9b680;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .premium-banner img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .premium-process {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 30px;
+            border-top: 1px solid #dac8b2;
+            border-bottom: 1px solid #dac8b2;
+        }
+
+        .premium-step {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            gap: 14px;
+            align-items: start;
+            padding: 24px;
+        }
+
+        .premium-step + .premium-step {
+            border-left: 1px solid #dac8b2;
+        }
+
+        .premium-step-index {
+            display: inline-flex;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            background: #8a551f;
+            border-radius: 50%;
+            font-weight: 900;
+        }
+
+        .premium-step h3 {
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .premium-step p {
+            color: #665548;
+            font-size: 0.95rem;
+        }
+
+        .premium-mobile-cta {
+            display: none;
+        }
+
         .order-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -999,9 +1095,16 @@
             .steps-grid,
             .review-grid,
             .products-grid,
+            .premium-process,
             .faq-grid,
             .order-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .premium-step:nth-child(3) {
+                grid-column: 1 / -1;
+                border-top: 1px solid #dac8b2;
+                border-left: 0;
             }
 
             .order-row {
@@ -1078,8 +1181,23 @@
             .section-heading h2,
             .story-copy h2,
             .mission-copy h2,
+            .premium-heading h2,
             .order-copy h2 {
                 font-size: 2.25rem;
+            }
+
+            .premium-intro {
+                grid-template-columns: 1fr;
+            }
+
+            .premium-intro > .premium-cta {
+                width: 100%;
+            }
+
+            .premium-mobile-cta {
+                display: inline-flex;
+                width: 100%;
+                margin-top: 22px;
             }
 
             .hero p {
@@ -1091,9 +1209,17 @@
             .steps-grid,
             .review-grid,
             .products-grid,
+            .premium-process,
             .faq-grid,
             .order-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .premium-step + .premium-step,
+            .premium-step:nth-child(3) {
+                grid-column: auto;
+                border-top: 1px solid #dac8b2;
+                border-left: 0;
             }
 
             .product-card {
@@ -1171,7 +1297,7 @@
             </button>
             <ul class="nav-menu" id="nav-menu">
                 <li><a class="nav-link" href="#catalogo">Colección</a></li>
-                <li><a class="nav-link" href="#como-funciona">Cómo funciona</a></li>
+                <li><a class="nav-link" href="#personalizados">Personalizados</a></li>
                 <li><a class="nav-link" href="#mision">Fundación</a></li>
                 <li><a class="nav-link" href="#preguntas">Preguntas</a></li>
                 <li><a class="btn btn-primary" href="#pedido"><i class="fa-brands fa-whatsapp"></i> Pedir ahora</a></li>
@@ -1351,6 +1477,53 @@
             </div>
         </section>
 
+        <section class="section premium-custom" id="personalizados" aria-labelledby="personalizados-title">
+            <div class="container">
+                <div class="premium-intro">
+                    <div class="premium-heading">
+                        <span class="eyebrow"><i class="fa-solid fa-gem"></i> Personalizados premium</span>
+                        <h2 id="personalizados-title">Tu peludito convertido en una pieza única</h2>
+                        <p>Creamos una figura inspirada en sus rasgos, colores y expresión. Osito es un ejemplo real del proceso: partimos de sus fotografías y desarrollamos un recuerdo hecho especialmente para su familia.</p>
+                    </div>
+                    <a class="btn premium-cta" href="https://wa.me/573052556248?text=Hola%20Peluditos%203D%2C%20quiero%20cotizar%20un%20personalizado%20premium%20inspirado%20en%20mi%20peludito.%20%C2%BFQu%C3%A9%20fotos%20necesitan%3F" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i> Cotizar mi peludito
+                    </a>
+                </div>
+
+                <figure class="premium-banner">
+                    <img src="osito-personalizado-premium.webp" alt="Comparación de las fotografías de Osito con su figura personalizada premium creada por Peluditos 3D" width="1600" height="900" loading="lazy" decoding="async">
+                </figure>
+
+                <div class="premium-process" aria-label="Proceso para crear un personalizado premium">
+                    <div class="premium-step">
+                        <span class="premium-step-index" aria-hidden="true">1</span>
+                        <div>
+                            <h3>Envíanos sus fotos</h3>
+                            <p>Comparte imágenes claras de frente, perfil y espalda para conocer cada detalle.</p>
+                        </div>
+                    </div>
+                    <div class="premium-step">
+                        <span class="premium-step-index" aria-hidden="true">2</span>
+                        <div>
+                            <h3>Recibe tu cotización</h3>
+                            <p>Revisamos el diseño, tamaño y nivel de detalle antes de confirmar el valor y el tiempo.</p>
+                        </div>
+                    </div>
+                    <div class="premium-step">
+                        <span class="premium-step-index" aria-hidden="true">3</span>
+                        <div>
+                            <h3>Aprobamos y creamos</h3>
+                            <p>Validamos contigo los rasgos principales y producimos una pieza cuidada, hecha con amor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="btn premium-cta premium-mobile-cta" href="https://wa.me/573052556248?text=Hola%20Peluditos%203D%2C%20quiero%20cotizar%20un%20personalizado%20premium%20inspirado%20en%20mi%20peludito.%20%C2%BFQu%C3%A9%20fotos%20necesitan%3F" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar mi peludito
+                </a>
+            </div>
+        </section>
+
         <section class="section how" id="como-funciona" aria-labelledby="como-title">
             <div class="container">
                 <div class="section-heading">
@@ -1456,6 +1629,10 @@
                         <details>
                             <summary>¿Cómo hago mi pedido?</summary>
                             <p>Elige los modelos, ajusta las cantidades y completa tu nombre y ciudad. Revisas el resumen y continúas la conversación por WhatsApp.</p>
+                        </details>
+                        <details>
+                            <summary>¿Cómo cotizo un personalizado premium?</summary>
+                            <p>Abre la sección Personalizados, pulsa “Cotizar mi peludito” y envíanos por WhatsApp fotografías claras de frente, perfil y espalda. Revisamos el nivel de detalle antes de confirmar precio y tiempo de elaboración.</p>
                         </details>
                         <details>
                             <summary>¿El pago se realiza en esta página?</summary>
@@ -1605,11 +1782,24 @@
         });
 
         navLinks.forEach((link) => {
-            link.addEventListener("click", () => {
+            link.addEventListener("click", (event) => {
+                const targetId = link.getAttribute("href");
                 document.body.classList.remove("nav-open");
                 navToggle.setAttribute("aria-expanded", "false");
                 navToggle.setAttribute("aria-label", "Abrir menú");
                 navIcon.className = "fa-solid fa-bars";
+
+                if (targetId?.startsWith("#")) {
+                    const target = document.querySelector(targetId);
+                    if (!target) return;
+
+                    event.preventDefault();
+                    window.history.pushState(null, "", targetId);
+                    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                    window.requestAnimationFrame(() => {
+                        target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+                    });
+                }
             });
         });
 

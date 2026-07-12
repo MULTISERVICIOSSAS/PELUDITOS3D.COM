@@ -13,6 +13,7 @@ const requiredFiles = [
     "favicon.ico",
     "favicon-32.png",
     "apple-touch-icon.png",
+    "osito-personalizado-premium.webp",
     "hero.jpg"
 ];
 
@@ -34,6 +35,8 @@ if (!index.includes('property="og:url" content="https://peluditos3d.shop/"')) fa
 if (!index.includes('id="cart-display" aria-live="polite"')) fail("El carrito no tiene región aria-live");
 if (!index.includes("localStorage")) fail("El carrito no implementa persistencia");
 if (!index.includes("window.confirm")) fail("Falta confirmación antes de WhatsApp");
+if (!index.includes('id="personalizados"')) fail("Falta la sección de personalizados premium");
+if (!index.includes("quiero%20cotizar%20un%20personalizado%20premium")) fail("Falta el mensaje de cotización premium para WhatsApp");
 
 for (const [name, content] of [["index.html", index], ["404.html", page404]]) {
     if (/shopify|myshopify|23\.227\.38\.65/i.test(content)) fail(`${name} conserva una referencia de Shopify`);
