@@ -22,8 +22,9 @@
     <title>Peluditos 3D | Accesorios para celular con causa</title>
 
     <link rel="canonical" href="https://peluditos3d.shop/">
-    <link rel="icon" href="logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
     <link rel="preload" href="hero.jpg" as="image" fetchpriority="high">
 
     <script type="application/ld+json">
@@ -35,7 +36,7 @@
                 "@id": "https://peluditos3d.shop/#organization",
                 "name": "Peluditos 3D",
                 "url": "https://peluditos3d.shop/",
-                "logo": "https://peluditos3d.shop/logo.png",
+                "logo": "https://peluditos3d.shop/brand-symbol.png",
                 "sameAs": ["https://www.instagram.com/peluditos3d/"]
             },
             {
@@ -608,13 +609,24 @@
             background: #fff7e4;
         }
 
-        .story-grid,
-        .mission-grid,
         .order-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 42px;
             align-items: center;
+        }
+
+        .story-copy,
+        .mission-copy {
+            width: min(760px, 100%);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story .check-list {
+            max-width: 590px;
+            margin: 22px auto 0;
+            text-align: left;
         }
 
         .story-copy h2,
@@ -658,26 +670,16 @@
             border-radius: 50%;
         }
 
-        .image-frame {
-            overflow: hidden;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .image-frame img {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-        }
-
         .mission {
             background: var(--paper);
         }
 
         .mission-card {
             display: grid;
+            max-width: 680px;
             gap: 14px;
-            margin-top: 22px;
+            margin: 22px auto 0;
+            text-align: left;
         }
 
         .mission-note {
@@ -997,8 +999,6 @@
             .steps-grid,
             .review-grid,
             .products-grid,
-            .story-grid,
-            .mission-grid,
             .faq-grid,
             .order-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1091,8 +1091,6 @@
             .steps-grid,
             .review-grid,
             .products-grid,
-            .story-grid,
-            .mission-grid,
             .faq-grid,
             .order-grid {
                 grid-template-columns: 1fr;
@@ -1104,14 +1102,6 @@
 
             .product-media {
                 min-height: 190px;
-            }
-
-            .story .image-frame {
-                order: -1;
-            }
-
-            .mission .image-frame {
-                order: -1;
             }
 
             .footer-grid {
@@ -1173,7 +1163,7 @@
     <header class="site-header">
         <nav class="container nav" aria-label="Navegación principal">
             <a class="brand" href="#inicio" aria-label="Peluditos 3D, ir al inicio">
-                <img src="logo.png" alt="" width="46" height="46">
+                <img src="brand-symbol.png" alt="" width="46" height="46">
                 <span>Peluditos 3D</span>
             </a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
@@ -1393,41 +1383,31 @@
 
         <section class="section story" aria-labelledby="regalo-title">
             <div class="container">
-                <div class="story-grid">
-                    <div class="story-copy">
-                        <span class="eyebrow"><i class="fa-solid fa-gift"></i> Listo para sorprender</span>
-                        <h2 id="regalo-title">Un detalle bonito para amantes de las mascotas</h2>
-                        <p>Cada Peludito llega con presentación cuidada para cumpleaños, amor y amistad, aniversarios o simplemente para alegrarle el día a alguien.</p>
-                        <ul class="check-list">
-                            <li><i class="fa-solid fa-check"></i> Ideal para regalo personal o de pareja</li>
-                            <li><i class="fa-solid fa-check"></i> Diseños de perros y gatos populares</li>
-                            <li><i class="fa-solid fa-check"></i> Pedido rápido por WhatsApp</li>
-                        </ul>
-                    </div>
-                    <div class="image-frame">
-                        <img src="regalo.jpg" alt="Caja de regalo de Peluditos 3D" width="974" height="974" loading="lazy" decoding="async">
-                    </div>
+                <div class="story-copy">
+                    <span class="eyebrow"><i class="fa-solid fa-gift"></i> Listo para sorprender</span>
+                    <h2 id="regalo-title">Un detalle bonito para amantes de las mascotas</h2>
+                    <p>Cada Peludito llega con presentación cuidada para cumpleaños, amor y amistad, aniversarios o simplemente para alegrarle el día a alguien.</p>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check"></i> Ideal para regalo personal o de pareja</li>
+                        <li><i class="fa-solid fa-check"></i> Diseños de perros y gatos populares</li>
+                        <li><i class="fa-solid fa-check"></i> Pedido rápido por WhatsApp</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section class="section mission" id="mision" aria-labelledby="mision-title">
             <div class="container">
-                <div class="mission-grid">
-                    <div class="image-frame">
-                        <img src="info.jpg" alt="Información de la causa social de Peluditos 3D" width="1024" height="1280" loading="lazy" decoding="async">
-                    </div>
-                    <div class="mission-copy">
-                        <span class="eyebrow"><i class="fa-solid fa-hand-holding-heart"></i> Compra con causa</span>
-                        <h2 id="mision-title">Tu pedido ayuda a la Fundación Animalista Girardot</h2>
-                        <p>Parte de las ganancias se destina a apoyar alimentos y medicinas para animales rescatados. No solo compras un accesorio: ayudas a llenar un plato.</p>
-                        <div class="mission-card">
-                            <div class="mission-note">
-                                <i class="fa-solid fa-bowl-food"></i>
-                                <span>Con cada compra estás aportando a una ayuda concreta para peluditos que esperan una segunda oportunidad.</span>
-                            </div>
-                            <a class="btn btn-secondary" href="#pedido"><i class="fa-solid fa-heart"></i> Quiero apoyar</a>
+                <div class="mission-copy">
+                    <span class="eyebrow"><i class="fa-solid fa-hand-holding-heart"></i> Compra con causa</span>
+                    <h2 id="mision-title">Tu pedido ayuda a la Fundación Animalista Girardot</h2>
+                    <p>Parte de las ganancias se destina a apoyar alimentos y medicinas para animales rescatados. No solo compras un accesorio: ayudas a llenar un plato.</p>
+                    <div class="mission-card">
+                        <div class="mission-note">
+                            <i class="fa-solid fa-bowl-food"></i>
+                            <span>Con cada compra estás aportando a una ayuda concreta para peluditos que esperan una segunda oportunidad.</span>
                         </div>
+                        <a class="btn btn-secondary" href="#pedido"><i class="fa-solid fa-heart"></i> Quiero apoyar</a>
                     </div>
                 </div>
             </div>

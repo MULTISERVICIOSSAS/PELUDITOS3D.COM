@@ -9,7 +9,10 @@ const requiredFiles = [
     ".nojekyll",
     "robots.txt",
     "sitemap.xml",
-    "logo.png",
+    "brand-symbol.png",
+    "favicon.ico",
+    "favicon-32.png",
+    "apple-touch-icon.png",
     "hero.jpg"
 ];
 

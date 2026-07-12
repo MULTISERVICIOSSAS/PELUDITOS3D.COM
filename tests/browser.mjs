@@ -62,6 +62,10 @@ check((await page.locator("#form-status").innerText()).includes("seguir ajustand
 await page.evaluate(() => window.scrollTo(0, 0));
 await page.waitForTimeout(100);
 await page.screenshot({ path: path.join(outputDir, "desktop-1366x768.png"), fullPage: false });
+await page.locator(".story").screenshot({ path: path.join(outputDir, "story-sin-imagen.png") });
+await page.locator("#mision").screenshot({ path: path.join(outputDir, "mision-sin-imagen.png") });
+check(await page.locator(".story img").count() === 0, "La sección de regalo aún contiene una imagen");
+check(await page.locator("#mision img").count() === 0, "La sección de misión aún contiene una imagen");
 
 const viewports = [
     { width: 320, height: 568 },
