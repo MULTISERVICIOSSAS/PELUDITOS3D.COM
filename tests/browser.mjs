@@ -35,6 +35,9 @@ check(await page.evaluate(() => {
     const sections = [...document.querySelectorAll("main > section")];
     return sections.indexOf(document.querySelector("#como-funciona")) < sections.indexOf(document.querySelector("#catalogo"));
 }), "La guía de instalación no aparece antes del catálogo");
+check(await page.locator("#catalogo .product-card").count() === 10, "El catálogo no muestra los 10 modelos");
+check((await page.locator("#catalogo .product-card-offer").innerText()).includes("Pinscher"), "El Pinscher no está destacado como oferta");
+check((await page.locator("#catalogo .product-card-offer .price").innerText()).includes("19.900"), "El precio promocional del Pinscher no es $19.900");
 
 await page.locator("#product-select").selectOption("Poodle");
 await page.locator("#product-qty").fill("2");
@@ -43,8 +46,14 @@ await page.getByRole("button", { name: "Agregar una unidad de Poodle" }).click()
 check((await page.locator("#cart-display").innerText()).includes("3"), "No se actualizó la cantidad del carrito");
 check((await page.locator("#cart-total").innerText()).includes("74.700"), "Total de carrito incorrecto");
 
+await page.locator("#product-select").selectOption("Pinscher");
+await page.locator("#product-qty").fill("1");
+await page.locator("#add-product").click();
+check((await page.locator("#cart-display").innerText()).includes("19.900"), "El carrito no aplicó la promoción del Pinscher");
+check((await page.locator("#cart-total").innerText()).includes("94.600"), "El total combinado no respeta los precios por modelo");
+
 await page.reload({ waitUntil: "networkidle" });
-check((await page.locator("#cart-total").innerText()).includes("74.700"), "El carrito no persistió tras recargar");
+check((await page.locator("#cart-total").innerText()).includes("94.600"), "El carrito no persistió tras recargar");
 
 await page.locator('#order-form button[type="submit"]').click();
 check(await page.locator("#name").evaluate((element) => element === document.activeElement), "La validación no enfocó el nombre obligatorio");
